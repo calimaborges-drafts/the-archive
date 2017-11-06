@@ -1,0 +1,23 @@
+{
+  "name": "taskify-api",
+  "scripts": {
+  },
+  "env": {
+    "APP_SALT": {
+      "required": true
+    },
+    "MONGODB_URI": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "mongolab"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

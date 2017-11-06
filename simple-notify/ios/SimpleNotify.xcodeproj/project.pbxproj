@@ -1,0 +1,394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12E5001E1E381960009D6545 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E5001D1E381960009D6545 /* AppDelegate.swift */; };
+		12E500201E381960009D6545 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E5001F1E381960009D6545 /* ViewController.swift */; };
+		12E500231E381960009D6545 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12E500211E381960009D6545 /* Main.storyboard */; };
+		12E500251E381960009D6545 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E500241E381960009D6545 /* Assets.xcassets */; };
+		12E500281E381960009D6545 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12E500261E381960009D6545 /* LaunchScreen.storyboard */; };
+		9862ED3B7352B7C45C8A1AD1 /* Pods_SimpleNotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40ECC6384861640CEF9008B /* Pods_SimpleNotify.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		12E5001A1E381960009D6545 /* SimpleNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		12E5001D1E381960009D6545 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		12E5001F1E381960009D6545 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		12E500221E381960009D6545 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		12E500241E381960009D6545 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		12E500271E381960009D6545 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		12E500291E381960009D6545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12F487F81E39798A00173B93 /* SimpleNotify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleNotify.entitlements; sourceTree = "<group>"; };
+		7F78146E3B1684C832550BC4 /* Pods-SimpleNotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleNotify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleNotify/Pods-SimpleNotify.debug.xcconfig"; sourceTree = "<group>"; };
+		DD5A9B977EA0842D867F2124 /* Pods-SimpleNotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleNotify.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleNotify/Pods-SimpleNotify.release.xcconfig"; sourceTree = "<group>"; };
+		F40ECC6384861640CEF9008B /* Pods_SimpleNotify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleNotify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12E500171E381960009D6545 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9862ED3B7352B7C45C8A1AD1 /* Pods_SimpleNotify.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12E500111E381960009D6545 = {
+			isa = PBXGroup;
+			children = (
+				12E5001C1E381960009D6545 /* SimpleNotify */,
+				12E5001B1E381960009D6545 /* Products */,
+				282AF57027DE7262D1C50F7D /* Pods */,
+				60D2379FFC0C32B1915FE22B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		12E5001B1E381960009D6545 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12E5001A1E381960009D6545 /* SimpleNotify.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		12E5001C1E381960009D6545 /* SimpleNotify */ = {
+			isa = PBXGroup;
+			children = (
+				12F487F81E39798A00173B93 /* SimpleNotify.entitlements */,
+				12E5001D1E381960009D6545 /* AppDelegate.swift */,
+				12E5001F1E381960009D6545 /* ViewController.swift */,
+				12E500211E381960009D6545 /* Main.storyboard */,
+				12E500241E381960009D6545 /* Assets.xcassets */,
+				12E500261E381960009D6545 /* LaunchScreen.storyboard */,
+				12E500291E381960009D6545 /* Info.plist */,
+			);
+			path = SimpleNotify;
+			sourceTree = "<group>";
+		};
+		282AF57027DE7262D1C50F7D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F78146E3B1684C832550BC4 /* Pods-SimpleNotify.debug.xcconfig */,
+				DD5A9B977EA0842D867F2124 /* Pods-SimpleNotify.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		60D2379FFC0C32B1915FE22B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F40ECC6384861640CEF9008B /* Pods_SimpleNotify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		12E500191E381960009D6545 /* SimpleNotify */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12E5002C1E381960009D6545 /* Build configuration list for PBXNativeTarget "SimpleNotify" */;
+			buildPhases = (
+				525B74888AE9EE7324821A64 /* [CP] Check Pods Manifest.lock */,
+				12E500161E381960009D6545 /* Sources */,
+				12E500171E381960009D6545 /* Frameworks */,
+				12E500181E381960009D6545 /* Resources */,
+				5480D7F312E27364110202F9 /* [CP] Embed Pods Frameworks */,
+				487E56BAA54EAD016B84F499 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleNotify;
+			productName = SimpleNotify;
+			productReference = 12E5001A1E381960009D6545 /* SimpleNotify.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12E500121E381960009D6545 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = carlosborges;
+				TargetAttributes = {
+					12E500191E381960009D6545 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = DKAQL784H4;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 12E500151E381960009D6545 /* Build configuration list for PBXProject "SimpleNotify" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 12E500111E381960009D6545;
+			productRefGroup = 12E5001B1E381960009D6545 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				12E500191E381960009D6545 /* SimpleNotify */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12E500181E381960009D6545 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12E500281E381960009D6545 /* LaunchScreen.storyboard in Resources */,
+				12E500251E381960009D6545 /* Assets.xcassets in Resources */,
+				12E500231E381960009D6545 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		487E56BAA54EAD016B84F499 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleNotify/Pods-SimpleNotify-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		525B74888AE9EE7324821A64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5480D7F312E27364110202F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleNotify/Pods-SimpleNotify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12E500161E381960009D6545 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12E500201E381960009D6545 /* ViewController.swift in Sources */,
+				12E5001E1E381960009D6545 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		12E500211E381960009D6545 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12E500221E381960009D6545 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		12E500261E381960009D6545 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12E500271E381960009D6545 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		12E5002A1E381960009D6545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		12E5002B1E381960009D6545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		12E5002D1E381960009D6545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F78146E3B1684C832550BC4 /* Pods-SimpleNotify.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SimpleNotify/SimpleNotify.entitlements;
+				DEVELOPMENT_TEAM = DKAQL784H4;
+				INFOPLIST_FILE = SimpleNotify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = carlosborges.SimpleNotify;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		12E5002E1E381960009D6545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD5A9B977EA0842D867F2124 /* Pods-SimpleNotify.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SimpleNotify/SimpleNotify.entitlements;
+				DEVELOPMENT_TEAM = DKAQL784H4;
+				INFOPLIST_FILE = SimpleNotify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = carlosborges.SimpleNotify;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12E500151E381960009D6545 /* Build configuration list for PBXProject "SimpleNotify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12E5002A1E381960009D6545 /* Debug */,
+				12E5002B1E381960009D6545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12E5002C1E381960009D6545 /* Build configuration list for PBXNativeTarget "SimpleNotify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12E5002D1E381960009D6545 /* Debug */,
+				12E5002E1E381960009D6545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 12E500121E381960009D6545 /* Project object */;
+}

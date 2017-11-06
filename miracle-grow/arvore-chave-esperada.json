@@ -1,0 +1,28 @@
+[
+  {
+    "chave": 1,
+    "chavePai": null,
+    "children": [
+      {
+        "chave": 3,
+        "chavePai": 1,
+        "children": []
+      },
+      {
+        "chave": 4,
+        "chavePai": 1,
+        "children": []
+      },
+      {
+        "chave": 5,
+        "chavePai": 1,
+        "children": []
+      }
+    ]
+  },
+  {
+    "chave": 2,
+    "chavePai": null,
+    "children": []
+  }
+]

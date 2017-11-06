@@ -1,0 +1,12 @@
+{
+    "name": "calimaborges/beats1-downloader",
+    "require": {
+        "nesbot/carbon": "^1.20"
+    },
+    "authors": [
+        {
+            "name": "Carlos Augusto Borges",
+            "email": "calimaborges@gmail.com"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+    - "7"
+before_deploy:
+    - npm run build && mv build/index.html build/200.html
+
+deploy:
+    skip_cleanup: true
+    provider: surge
+    project: ./build
+    domain: https://nappy-power.surge.sh

@@ -1,0 +1,31 @@
+{
+  "name": "http-dump",
+  "version": "1.0.0",
+  "description": "HTTP Dumper",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "http",
+    "rest",
+    "dump"
+  ],
+  "author": "Carlos Augusto Borges",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "http-status": "^0.2.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "nodemon": "^1.7.1",
+    "superagent": "^1.4.0"
+  }
+}

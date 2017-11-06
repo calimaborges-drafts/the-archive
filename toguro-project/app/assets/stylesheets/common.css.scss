@@ -1,0 +1,92 @@
+@import "twitter/bootstrap";
+
+// MIXINS
+@mixin round($horizontal, $vertical, $radius) {
+  border-#{$horizontal}-#{$vertical}-radius: $radius;
+  -moz-border-radius-#{$horizontal}-#{$vertical}: $radius;
+  -webkit-border-#{$horizontal}-#{$vertical}-radius: $radius;
+}
+
+@mixin round-all($radius) {
+  border-radius: $radius;
+  -moz-border-radius-: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin centralize {
+	position: relative;
+	margin: 0px auto;
+	text-align: center;
+}
+
+@mixin middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+@mixin vertical-padding($size) {
+	padding-top: $size;
+	padding-bottom: $size;
+}
+
+@mixin transition($property, $time) {
+	transition: $property $time ease-in-out;
+   -moz-transition: $property $time ease-in-out;
+   -webkit-transition: $property $time ease-in-out;
+}
+
+@mixin text-shadow-all($size, $color) {
+	text-shadow: 0 0 $size $color;
+    -webkit-text-shadow: 0 0 $size $color; 
+    -moz-text-shadow: 0 0 $size $color;
+}
+
+@mixin box-shadow-all($size, $color) {
+	box-shadow: 0 0 $size $color;
+    -webkit-box-shadow: 0 0 $size $color; 
+    -moz-box-shadow: 0 0 $size $color;
+}
+
+@mixin box-shadow($x, $y, $blur, $size, $color) {
+	box-shadow: $x $y $blur $size $color;
+    -webkit-box-shadow: $x $y $blur $size $color; 
+    -moz-box-shadow: $x $y $blur $size $color;
+}
+
+// COMMON CLASSES
+.navbar-margin {
+	margin-top: $navbarHeight + 20px;
+}
+
+.round {
+	@include round-all(10px);
+}
+
+.center {
+	@include centralize;
+}
+
+.vertical-padding {
+	@include vertical-padding(5px);
+}
+
+// CONTAINERS TYPES
+// Top Project specs
+.project {
+	@include centralize;
+	padding-top: 8px;
+	font-size: 170%;
+	text-transform: uppercase;
+}
+
+.project a {
+	@include text-shadow-all(20px, white);
+	@include transition(color, 0.25s);
+	color: #fff;
+	text-decoration: none;
+}
+
+.project a:hover {
+	color: #E94046;
+	text-decoration: none;
+}

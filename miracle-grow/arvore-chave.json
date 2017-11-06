@@ -1,0 +1,22 @@
+[
+  {
+    "chave": 1,
+    "chavePai": null
+  },
+  {
+    "chave": 2,
+    "chavePai": null
+  },
+  {
+    "chave": 3,
+    "chavePai": 1
+  },
+  {
+    "chave": 4,
+    "chavePai": 1
+  },
+  {
+    "chave": 5,
+    "chavePai": 1
+  }
+]

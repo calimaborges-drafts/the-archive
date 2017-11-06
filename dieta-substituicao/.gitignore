@@ -1,0 +1,7 @@
+target
+.env
+dieta-substituicao.iml
+.idea
+database.mv.db
+database.trace.db
+npm-debug.log

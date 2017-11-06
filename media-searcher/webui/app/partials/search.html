@@ -1,0 +1,17 @@
+<div>
+	Search: 
+	<input ng-model="query" />
+	<button ng-click="searchMovie()">Search</button>
+	<div id="movieList">
+		<div ng-repeat="movie in movies.results">
+			<p><img ng-src="{{configuration.images.base_url + 'w92/' + movie.poster_path}}" /></p>
+			<p>{{movie.title}}</p>
+			<p>{{movie.release_date}}</p>
+			<p>{{movie.original_title}}</p>
+			<p><a href="#/torrent/{{movie.original_title + ' 720p'}}">Search Torrent</a></p>
+			<hr>
+		</div>
+	</div>
+	<pre>{{configuration|json}}</pre>
+	<pre>{{movies|json}}</pre>
+</div>

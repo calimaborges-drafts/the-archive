@@ -1,0 +1,32 @@
+@keyframes bouncy-zoom {
+  0% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+div#container-overlay,
+div#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+div#container {
+  background: url(../images/cover-background-1.jpg) no-repeat center center
+    fixed;
+  background-size: cover;
+  color: white;
+}
+
+div#container-overlay {
+  background: url(../images/repeatable-bg.png);
+}

@@ -1,0 +1,9 @@
+<div>
+	<p>Torrents (Pirate Bay) for "{{title}}"</p>
+	<div id="torrentList">
+		<div ng-repeat="(href, magnet) in torrents.result">
+			<p><a ng-href="{{magnet}}">{{href}}</a></p>
+		</div>
+	</div>
+	<pre>{{torrents|json}}</pre>
+</div>

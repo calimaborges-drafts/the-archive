@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <title>The Algorave</title>
+</head>
+<body style="height: 100%;">
+<div style="background-color: black; height: 100%; color: white; font-family: monospace;" id="main_div">
+Tempo : <input type="text" id="tempo" value="0.125" onkeyup="setTempo(event.target.value)" style="width: 100%; font-family: monospace;"><br>
+Melody: <input type="text" id="melody" value="30, 40, 50, 60, 30, 40, 50, 60, 30, 40, 50, 60" style="width: 100%; font-family: monospace;"/><br>
+Beat00: <input type="text" id="beat0" value="0.9" style="width: 100%; font-family: monospace;"/><br>
+Beat01: <input type="text" id="beat1" value="0" style="width: 100%; font-family: monospace;"/><br>
+Beat02: <input type="text" id="beat2" value="0"style="width: 100%; font-family: monospace;"><br>
+Beat03: <input type="text" id="beat3" value="0"style="width: 100%; font-family: monospace;"><br>
+Beat04: <input type="text" id="beat4" value="0"style="width: 100%; font-family: monospace;"><br>
+Beat05: <input type="text" id="beat5" value="0"style="width: 100%; font-family: monospace;"><br>
+Beat06: <input type="text" id="beat6" value="0,0.5"style="width: 100%; font-family: monospace;"><br>
+Beat07: <input type="text" id="beat7" value="0,0,0,0.5"style="width: 100%; font-family: monospace;"><br>
+Beat08: <input type="text" id="beat8" value="0"style="width: 100%; font-family: monospace;"><br>
+Beat09: <input type="text" id="beat9" value="0.5, 0.5, 0.5"style="width: 100%; font-family: monospace;"><br>
+Beat10: <input type="text" id="beat10" value="0"style="width: 100%; font-family: monospace;"><br>
+Beat11: <input type="text" id="beat11" value="0"style="width: 100%; font-family: monospace;"><br>
+Beat12: <input type="text" id="beat12" value="0"style="width: 100%; font-family: monospace;"><br>
+
+</div>
+<script type="text/javascript">
+var audioContext = window.AudioContext || window.webkitAudioContext;
+
+function oscillatorFactory(con) {
+    return function(freq, output, start) {
+        var osc = con.createOscillator();
+        osc.frequency.value = freq;
+        osc.connect(output);
+        if (start) osc.start();
+        return osc;
+    };
+}
+
+function sampleLoaderFactory(con, buffers) {
+    return function(name, url, callback) {
+        console.log("Loading " + name + " from " + url);
+        var request = new XMLHttpRequest();
+        request.open('GET', url, true);
+        request.responseType = 'arraybuffer';
+        request.onload = function() {
+            con.decodeAudioData(request.response, function (buffer) {
+                buffers[name] = buffer;
+            });
+            callback();
+        };
+        request.onerror = function() {
+            console.log("Failed to load " + name + " from " + url);
+        };
+        request.send();
+    };
+}
+
+function playerFactory(con, output, buffers) {
+    return function(name, time) {
+        var player = con.createBufferSource();
+        player.buffer = buffers[name];
+        player.loop = false;
+        player.connect(output);
+        player.start(time);
+        return player;
+    };
+}
+
+function createAlgorave(samples, interval, tick, callback) {
+    var kTimeout = 50;
+    var kWaitTime = 1.5;
+    var currentInterval = interval;
+
+    var buffers = {};
+    var con = new audioContext();
+    var createOscillator = oscillatorFactory(con);
+    var loadSample = sampleLoaderFactory(con, buffers);
+    var play = playerFactory(con, con.destination, buffers);
+
+    var algorave = {
+        con: con,
+        createOscillator: createOscillator,
+        play: play,
+        setCurrentInterval: function(newInterval) {
+            currentInterval = newInterval;
+        },
+        getCurrentInterval: function() {
+            return currentInterval;
+        }
+    };
+
+    var loadedSamples = 0;
+    var timeoutCounter = 0;
+    var gotUpTo = 0;
+    var step = 0;
+
+    var musicInterval = setInterval(function () {
+        var now = con.currentTime;
+        var maxFutureTime = now + (kWaitTime * 1.5);
+        if (gotUpTo > now) {
+            now = gotUpTo;
+        }
+
+        while (now <= maxFutureTime) {
+            step++;
+            tick(now, step);
+            now += currentInterval;
+        }
+        gotUpTo = now;
+    }, kWaitTime * 1000);
+
+    algorave.stopAll = function() { clearInterval(musicInterval); };
+
+    samples.forEach( function(file, i) {
+        loadSample(i, file, function() { loadedSamples++; });
+    });
+
+    var isLoadedInterval = setInterval(function() {
+        if (loadedSamples == samples.length) {
+            callback(null);
+            clearInterval(isLoadedInterval);
+            return;
+        }
+
+        timeoutCounter++;
+        if (timeoutCounter > kTimeout) {
+            callback(new Error("Timeout"));
+            clearInterval(isLoadedInterval);
+        }
+    }, 100);
+
+    return algorave;
+}
+
+var samples = [
+    "000_et1closedhh.wav",
+    "001_et1crash.wav",
+    "002_et1hit1.wav",
+    "003_et1hit2.wav",
+    "004_et1hit3.wav",
+    "005_et1kick1.wav",
+    "006_et1kick2.wav",
+    "007_et1openhh.wav",
+    "008_et1perc1.wav",
+    "009_et1perc2.wav",
+    "010_et1ride.wav",
+    "011_et1snare1.wav",
+    "012_et1snare2.wav"
+ ];
+
+var oscs = [];
+
+function melodyFieldToArray() {
+    var melody = document.getElementById("melody");
+    return melody.value.split(",");
+}
+
+function beatsFieldsToMatrix() {
+    var matrix = [];
+    samples.forEach(function(sample, iSample) {
+        var beat = document.getElementById("beat" + iSample);
+        matrix.push(beat.value.split(","));
+    });
+    return matrix;
+}
+
+var algorave = createAlgorave(
+    samples,
+    parseFloat(document.getElementById("tempo").value),
+    function(now, step) {
+        var freqs = [melodyFieldToArray()];
+        var seqs = beatsFieldsToMatrix();
+        if (step === 1) oscs[0].start();
+
+        samples.forEach(function(sample, iSample) {
+            var seq = seqs[iSample];
+            if (!seq) return;
+            if (seq[step % seq.length] > Math.random()) {
+                console.log("Playing " + sample + " step " + step);
+                algorave.play(iSample, now);
+            }
+        });
+
+        oscs.forEach(function(osc, iOsc) {
+            var freq = freqs[iOsc];
+            if (!freq) return;
+            var currentFreq = freq[step % freq.length];
+            if (currentFreq) {
+                console.log("Melody on " + currentFreq);
+                osc.frequency.setValueAtTime(currentFreq, now);
+            }
+        });
+    },
+    function(err) {
+        if (err) return console.error(err);
+        oscs.push(algorave.createOscillator(500, algorave.con.destination, false));
+        // algorave.stopAll();
+    }
+);
+
+function setTempo(tempo) {
+    var parsedTempo = parseFloat(tempo);
+    if (!parsedTempo || tempo < 0.05) {
+        parsedTempo = 0.125;
+    }
+    algorave.setCurrentInterval(parsedTempo);
+}
+</script>
+</body>
+</html>

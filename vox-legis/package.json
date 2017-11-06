@@ -1,0 +1,45 @@
+{
+  "name": "vox-legis",
+  "description": "Sistema para auxiliar produção de textos repetitivos",
+  "version": "0.1.0",
+  "author": {
+    "name": "Carlos Augusto Borges"
+  },
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron src/",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "pack": "build --dir",
+    "dist": "build",
+    "postinstall": "install-app-deps",
+    "release": "np --no-publish"
+  },
+  "devDependencies": {
+    "@storybook/cli": "^3.0.0",
+    "@storybook/react": "^3.0.0",
+    "electron": "1.6.10",
+    "electron-builder": "^18.6.2"
+  },
+  "dependencies": {
+    "electron-log": "^2.2.6",
+    "fs-promise": "^2.0.3",
+    "glamor": "^2.20.25",
+    "mkdirp": "^0.5.1",
+    "np": "^2.16.0",
+    "prop-types": "^15.5.10",
+    "qs": "^6.4.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-icons": "^2.2.5",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.2.0"
+  },
+  "appId": "carlosborges.vox-legis",
+  "mac": {
+    "category": "public.app-category.productivity"
+  }
+}

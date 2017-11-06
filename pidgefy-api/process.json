@@ -1,0 +1,20 @@
+{
+    "apps": [{
+        "name": "pidgefy-api",
+        "cwd": "/usr/bin",
+        "script": "java",
+        "args": [
+            "-Xmx256m",
+            "-jar",
+            "/opt/pidgefy-api/target/pidgefy-api.jar"
+        ],
+        "env": {
+            "PORT": "4567"
+        },
+
+        "node_args": [],
+        "log_date_format": "YYYY-MM-DD HH:mm Z",
+        "exec_interpreter": "none",
+        "exec_mode": "fork"
+    }]
+}

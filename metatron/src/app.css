@@ -1,0 +1,70 @@
+/* GENERAL */
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    margin: 20px;
+    background-color: #eee;
+}
+
+/* SEARCH BOX */
+.search-box {
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+}
+
+.search-box input {
+    flex: 1 auto;
+    height: 30px;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    outline-width: 0;
+    margin-left: 5px;
+    font-size: 30px;
+}
+
+
+/* SNIPPET ITEM */
+.snippet-container {
+    height: 280px;
+    overflow: auto;
+}
+
+.snippet-container pre {
+    background-color: white;
+    padding: 10px;
+}
+
+.snippet-item h1 {
+    font-size: 20px;
+}
+
+.action-buttons {
+    float: right;
+}
+
+.action-buttons button {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    color: #888;
+    outline-width: 0;
+}
+
+.action-buttons button:hover {
+    color: #222;
+}
+
+/* SNIPPET EDIT */
+.edit-snippet-container form {
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: auto;
+}
+
+.edit-snippet-container form textarea {
+    flex-basis: 70%;
+}

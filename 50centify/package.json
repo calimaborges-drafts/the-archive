@@ -1,0 +1,50 @@
+{
+  "name": "50centify",
+  "version": "0.1.0",
+  "author": "Carlos Augusto Borges",
+  "description": "Converts multiple exchanges to 50 Cents meme",
+  "dependencies": {
+    "connect": "^3.4.0",
+    "fabric-browserify": "^1.4.13",
+    "jquery": "^2.1.4",
+    "money": "^0.2.0",
+    "qs": "^5.1.0",
+    "react": "^0.13.3",
+    "reactify": "^1.1.1",
+    "serve-static": "^1.10.0"
+  },
+  "devDependencies": {
+    "browserify": "latest",
+    "watchify": "latest",
+    "uglifyjs": "latest"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        {
+          "es6": false
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "build-js": "browserify -t reactify src/main.js | uglifyjs > dist/main.js -d",
+    "watch-js": "watchify src/main.js -o dist/main.js -dv"
+  },
+  "main": "js/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calimaborges/50centify.git"
+  },
+  "keywords": [
+    "reactify",
+    "reactjs",
+    "skeleton"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/calimaborges/50centify/issues"
+  },
+  "homepage": "https://github.com/calimaborges/50centify#readme"
+}

@@ -1,0 +1,104 @@
+<div class="row">
+  <div class="span12">
+    <%= link_to 'Novo usuário', new_usuario_path %>
+    <p>Logado como: <b><%= @usuario_logado.email %></b> (<%= @usuario_logado.id %>)</p>
+  </div>
+</div>
+<div class="row vertical-padding">
+    <div class="span1">&nbsp;</div>
+    <div class="span2">
+      <div class="foto-container">&nbsp;</div>
+    </div>
+
+    <div class="span2">
+      <div class="tns">
+        <span class="big-letter">T</span>
+        <span class="text">Training</span>
+      </div>
+    </div>
+
+    <div class="span2">
+      <div class="tns">
+        <span class="big-letter">N</span>
+        <span class="text">Nutrition</span>
+      </div>
+    </div>
+
+    <div class="span2">
+      <div class="tns">
+        <span class="big-letter">S</span>
+        <span class="text">Supplemetation</span>
+      </div>
+    </div>
+
+    <div class="span2">&nbsp;</div>
+    <div class="span1">&nbsp;</div>
+  </div>
+<% @usuario_logado.dias.each do |dia| %>
+  <div class="row vertical-padding">
+    <div class="span1">&nbsp;</div>
+    <div class="span2">
+      <div class="foto-container">
+        <a href="#myModal" data-toggle="modal" 
+            wtype="camera-ajax-params" wprm-dia="<%= dia.id %>" wprm-img-src="<%= foto_dia_anterior(dia) %>">
+          <% if dia.foto %>
+            <%=image_tag dia.foto, class: "img-polaroid" %>
+          <% else %>
+           <%=image_tag "foto_placer.png", class: "img-polaroid" %>
+          <% end %>
+        </a>
+        
+      </div>
+    </div>
+
+    <div class="span2">
+      <div class="status-container">
+        <% if numero_dia(dia) != 0 %>
+          <%= check_box_tag "exercicio_#{dia.id}", "exercicio_#{dia.id}", dia.fez_exercicio %>
+        <% end %>
+        &nbsp;
+      </div>
+    </div>
+
+    <div class="span2">
+      <div class="status-container">
+        <% if numero_dia(dia) != 0 %>
+          <%= check_box_tag "dieta_#{dia.id}", "dieta_#{dia.id}", dia.fez_dieta %>
+        <% end %>
+        &nbsp;
+      </div>
+    </div>
+
+    <div class="span2">
+      <div class="status-container">
+        <% if numero_dia(dia) != 0 %>
+          <%= check_box_tag "suplementacao_#{dia.id}", "suplementacao_#{dia.id}", dia.fez_suplementacao %>
+        <% end %>
+        &nbsp;
+      </div>
+    </div>
+
+    <div class="span2">
+      <div class="day-counter">
+        <span class="numero-dia">DIA <%= numero_dia(dia) %></span>
+        <span class="data"><%= dia.data %></span>
+      </div>
+    </div>
+    <div class="span1">&nbsp;</div>
+  </div>
+<% end %>
+<!-- <div class="camera"></div> -->
+<!-- <button class="button" /> -->
+<div class="modal hide fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">Tire a foto do seu corpo</h3>
+    </div>
+    <div class="modal-body">
+      <div wtype="camera" wprm-url="foto"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <button class="btn btn-primary button" wtype="camera-button">Tirar foto</button>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "time-sheet",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.6.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "local-storage": "^1.4.2",
+    "moment": "^2.15.1",
+    "numeral": "^1.5.3",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-input-mask": "^0.7.5",
+    "uniqid": "^4.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+     "deploy": "npm run build && mv build/index.html build/200.html && surge --domain smiling-mom.surge.sh --project ./build"
+  }
+}

@@ -1,0 +1,23 @@
+.datedays #date {
+  visibility: hidden;
+}
+
+.powered {
+  visibility: hidden;
+}
+
+.inpt-label-erro,
+.inpt-label-info {
+  visibility: hidden;
+}
+
+#header-cont h1,
+#header-cont #days {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 640px) {
+  #header-cont h1:before {
+    font-size: 1.1em;
+  }
+}

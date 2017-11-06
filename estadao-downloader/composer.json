@@ -1,0 +1,24 @@
+{
+    "name": "calimaborges/beats1-downloader",
+    "require": {
+        "nesbot/carbon": "^1.20",
+	    "guzzlehttp/guzzle": "~6.0",
+        "iio/libmergepdf": "^2.4",
+        "vlucas/phpdotenv": "^2.2",
+        "aws/aws-sdk-php": "^3.17",
+        "mailgun/mailgun-php": "~1.7.2"
+    },
+    "autoload": {
+        "psr-0": {
+            "App": "src/",
+            "Exception": "src/",
+            "Prototype": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Carlos Augusto Borges",
+            "email": "calimaborges@gmail.com"
+        }
+    ]
+}

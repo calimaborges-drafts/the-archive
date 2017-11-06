@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  foto: MyString
+  fez_exercicio: false
+  fez_dieta: false
+  fez_suplementacao: false
+  data: 2012-08-31 01:25:45
+  usuario: 
+
+two:
+  foto: MyString
+  fez_exercicio: false
+  fez_dieta: false
+  fez_suplementacao: false
+  data: 2012-08-31 01:25:45
+  usuario: 

@@ -1,0 +1,82 @@
+#main {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#save-the-date {
+  font-family: 'Amatic SC', cursive;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: 2.5em;
+  width: 400px;
+  margin: 0 0;
+}
+
+#save-the-date h1:before,
+#save-the-date h1:after {
+  content: "\f004";
+  margin: 2%;
+  font-family: "fontawesome";
+  color: #f14e78;
+  vertical-align: middle;
+  font-size: 0.2em;
+}
+
+#save-the-date h1 {
+  margin: 0;
+  padding: 0;
+}
+
+#save-the-date p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.6em;
+}
+
+.form-line {
+  margin: 10px 0;
+}
+
+.form-line p {
+  margin: 5px 0;
+}
+
+#casal {
+  font-family: "Pacifico", cursive;
+  font-size: 2.5em;
+}
+
+#hora:after,
+#hora:before {
+  content: "·";
+  font-size: 3em;
+  line-height: 0.5;
+  vertical-align: middle;
+}
+
+#hora:after {
+  margin-left: 3px;
+}
+
+#hora:before {
+  margin-right: 3px;
+}
+
+#data,
+#hora,
+#local {
+  display: inline;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+#rsvp {
+  margin-top: 10px;
+}
+
+#send {
+  margin-top: 20px;
+}

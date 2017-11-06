@@ -1,0 +1,42 @@
+{
+  "name": "redux-learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-react-redux": "watchify react-redux/react-redux.js -o react-redux/react-redux.min.js -dv",
+    "watch": "npm run watch-react-redux",
+    "watch-serve": "nodemon server.js",
+    "start": "npm run watch & npm run watch-serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "deep-freeze": "0.0.1",
+    "expect": "^1.16.0",
+    "express": "^4.13.4",
+    "nodemon": "^1.9.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "redux": "^3.3.1",
+    "watchify": "^3.7.0"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015",
+            "react"
+          ]
+        }
+      ]
+    ]
+  }
+}

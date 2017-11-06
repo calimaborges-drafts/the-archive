@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Conway's Game of Life - Hexagon</title>
+</head>
+<body>
+<canvas id="c" width="2000" height="2000"></canvas>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.5.0/fabric.min.js"></script>
+<script>
+    window.kCellSize = 10;
+    window.kCellGap = 1;
+    window.kBoardSize = 30;
+
+    window.kUnderpopulation = 1;
+    window.kOverpopulation = 1;
+    window.kBorn = 2;
+
+    window.triangleHeight = function(s) {
+        return (Math.sqrt(3) * s) / 2;
+    };
+
+    var ConwayGame = function(hive) {
+        this.hive = hive;
+
+        this.aliveNeighbors = function(cell) {
+            var neighbors = this.hive.neighbors(cell.x, cell.y);
+            var aliveNeighbors = [];
+            for (var i = 0; i < neighbors.length; i++) {
+                if (neighbors[i].alive) {
+                    aliveNeighbors.push(neighbors[i]);
+                }
+            }
+
+            return aliveNeighbors;
+        };
+
+        this.tick = function() {
+            for (var i = 0; i < this.hive.cells.length; i++) {
+                var cell = this.hive.cells[i];
+                var neighbors = this.aliveNeighbors(cell);
+
+                // For alive cells
+                if (cell.alive) {
+                    // underpopulation
+                    if (neighbors.length < window.kUnderpopulation) {
+                        cell.alive = false;
+                    }
+
+                    // overpopulation
+                    if (neighbors.length > window.kOverpopulation) {
+                        cell.alive = false;
+                    }
+                } else {
+                    if (neighbors.length == window.kBorn) {
+                        cell.alive = true;
+                    }
+                }
+            }
+
+            this.hive.refresh();
+        };
+    };
+
+
+    var Hive = function(canvas, width, height) {
+        this.canvas = canvas;
+        this.cellSize = window.kCellSize;
+        this.cellGap = window.kCellGap;
+        this.cells = [];
+
+        for (var x = 0; x < width; x++) {
+            for (var y = 0; y < height; y++) {
+                var cell = new Cell(x, y, this.cellSize, this.cellGap);
+                cell.refresh();
+                this.cells.push(cell);
+                this.canvas.add(cell.hexagon);
+//                this.canvas.add(cell.text);
+
+            }
+        }
+
+        this.neighbors = function(x, y) {
+            var neighbors = [];
+            for (var xi = -1; xi <= 1; xi++) {
+                for (var yi = -1; yi <= 1; yi++) {
+                    if (yi == 0 && xi == 0) continue;
+                    if (y % 2 == 0) {
+                        if (yi == 1 && xi == -1) continue;
+                        if (yi == -1 && xi == -1) continue;
+                    } else {
+                        if (yi == 1 && xi == 1) continue;
+                        if (yi == -1 && xi == 1) continue;
+                    }
+
+                    var cell = this.get(x + xi, y + yi);
+
+                    if (cell) {
+                        neighbors.push(cell);
+                    }
+
+                }
+            }
+
+            return neighbors;
+        };
+
+        this.get = function(x, y) {
+            for (var i = 0; i < this.cells.length; i++) {
+                var cell = this.cells[i];
+
+                if (cell.x == x && cell.y == y) {
+                    return cell;
+                }
+            }
+
+            return null;
+        };
+
+        this.refresh = function() {
+            for (var i = 0; i < this.cells.length; i++) {
+                this.cells[i].refresh();
+            }
+
+            this.canvas.renderAll();
+        };
+    };
+
+    var Cell = function(x, y, size, gap) {
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.gap = gap;
+        this.alive = false;
+        this.text = null;
+        this.hexagon = null;
+
+        this.calculatePosition = function() {
+            var px = this.x * ( 2 * triangleHeight(this.size) + this.gap );
+            if (this.y % 2 != 1) {
+                px += this.gap / 2 + triangleHeight(this.size);
+            }
+            var py = this.y * ( 1.5 * this.size + triangleHeight(this.gap)) ;
+
+            return {
+                'x': px,
+                'y': py
+            }
+        };
+
+        this.refresh = function() {
+            this.refreshText();
+            this.refreshHexagon();
+        };
+
+        this.refreshText = function() {
+            var color = this.alive ? 'white' : 'black';
+
+            if (this.text == null) {
+                var p = this.calculatePosition();
+                p.x += triangleHeight(this.size);
+                p.y += triangleHeight(this.size);
+
+                this.text = new fabric.Text('[' + this.y + ',' + this.x + ']', {
+                    fill: color,
+                    left: p.x,
+                    top: p.y,
+                    originX: 'center',
+                    originY: 'center',
+                    fontSize: 10
+                });
+            } else {
+                this.text.set({
+                   fill: color
+                });
+            }
+        };
+
+
+        this.refreshHexagon = function() {
+            var color = this.alive ? 'black' : 'white';
+
+            if (this.hexagon == null) {
+                var p = this.calculatePosition();
+                var that = this;
+                var points = [
+                    {x: p.x, y: p.y + (that.size / 2)},
+                    {x: p.x + triangleHeight(that.size), y: p.y},
+                    {x: p.x + 2 * triangleHeight(that.size), y: p.y + (that.size / 2)},
+                    {x: p.x + 2 * triangleHeight(that.size), y: p.y + (that.size / 2) + that.size},
+                    {x: p.x + triangleHeight(that.size), y: p.y + 2 * that.size},
+                    {x: p.x, y: p.y + (that.size / 2) + that.size}
+                ];
+
+                this.hexagon = new fabric.Polygon(points, {
+                    fill: color,
+                    left: p.x,
+                    top: p.y,
+                    lockMovementX: true,
+                    lockMovementY: true,
+                    selectable: false
+                });
+            } else {
+                this.hexagon.set({
+                    fill: color
+                });
+            }
+        };
+    };
+
+    var canvas = new fabric.Canvas('c');
+    var hive = new Hive(canvas, window.kBoardSize, window.kBoardSize);
+    var conwayGame = new ConwayGame(hive);
+
+    hive.get(window.kBoardSize - 3 + 1, window.kBoardSize - 3).alive = true;
+    hive.get(window.kBoardSize - 3 + 1, window.kBoardSize - 3 + 1).alive = true;
+    hive.get(window.kBoardSize - 3,     window.kBoardSize - 3 + 2).alive = true;
+    hive.get(window.kBoardSize - 3 + 1, window.kBoardSize - 3 + 2).alive = true;
+    hive.get(window.kBoardSize - 3 + 2, window.kBoardSize - 3 + 2).alive = true;
+
+//    for (var i = 0; i < hive.cells.length; i++) {
+//        if (Math.random() > 0.8) {
+//            hive.cells[i].alive = true;
+//        }
+//    }
+
+    hive.refresh();
+
+    setInterval(function() {
+        conwayGame.tick();
+    }, 100);
+
+</script>
+</body>
+</html>

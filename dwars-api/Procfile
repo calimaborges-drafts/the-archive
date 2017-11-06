@@ -1,0 +1,1 @@
+web:    java -jar target/dwars-app-jar-with-dependencies.jar

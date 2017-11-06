@@ -1,0 +1,12 @@
+{
+    "name": "calimaborges/simple-notify",
+    "authors": [
+        {
+            "name": "Carlos Augusto Borges",
+            "email": "calimaborges@gmail.com"
+        }
+    ],
+    "require": {
+        "duccio/apns-php": "^1.0"
+    }
+}

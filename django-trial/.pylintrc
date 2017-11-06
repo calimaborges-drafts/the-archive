@@ -1,0 +1,7 @@
+[MASTER]
+ignore = 
+persistent = yes
+load-plugins = pylint_django,pylint_celery
+
+[MESSAGES CONTROL]
+disable= missing-docstring

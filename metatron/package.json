@@ -1,0 +1,79 @@
+{
+  "name": "metatron",
+  "productName": "metatron",
+  "version": "0.1.0",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "lint": "echo \"No linting configured\"",
+    "release": "np --no-publish",
+    "publish": "electron-forge publish"
+  },
+  "keywords": [],
+  "author": "calimaborges",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {},
+      "electronWinstallerConfig": {
+        "name": "metatron"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "calimaborges",
+        "name": "metatron"
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "metatron"
+      }
+    }
+  },
+  "dependencies": {
+    "electron-compile": "^6.3.0",
+    "electron-devtools-installer": "^2.0.1",
+    "fs-promise": "^2.0.2",
+    "is-electron-renderer": "^2.0.1",
+    "mkdirp": "^0.5.1",
+    "prop-types": "^15.5.8",
+    "qs": "^6.4.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-icons": "^2.2.3",
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.1",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.3.3",
+    "babel-preset-react": "^6.24.1",
+    "electron-forge": "^3.0.1",
+    "electron-prebuilt-compile": "1.6.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "np": "^2.13.1"
+  }
+}

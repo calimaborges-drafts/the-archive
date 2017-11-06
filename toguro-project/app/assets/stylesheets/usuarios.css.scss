@@ -1,0 +1,44 @@
+// Place all the styles related to the usuarios controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "common";
+
+.tns {
+	padding: 10px;
+	background-color: #000;
+	text-align: center;
+
+	.big-letter {
+		color: #fff;
+		font-size: 200%;
+		display: block;
+	}
+
+	.text {
+		color: #fff;
+		font-size: 80%;
+	}
+}
+
+.day-counter {
+	padding: 10px;
+	text-align: center;
+
+	.numero-dia {
+		font-size: 180%;
+		display: block;
+	}
+}
+
+.status-container {
+	text-align: center;
+}
+
+.foto-container {
+	a {
+		img {
+			width: 126px; 
+			height: 94px;
+		}
+	}
+}

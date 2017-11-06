@@ -1,0 +1,23 @@
+@media screen and (max-height: 400px) {
+  #rsvp-container {
+    background-color: #333;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-height: 600px) {
+  #main {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #save-the-date {
+    font-size: 4.5em;
+    width: 100%;
+  }
+}

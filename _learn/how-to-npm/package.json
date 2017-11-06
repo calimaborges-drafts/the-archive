@@ -1,0 +1,21 @@
+{
+  "name": "@calimaborges/how-to-npm",
+  "version": "1.0.1",
+  "description": "how to npm Learning how to npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/calimaborges/how-to-npm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/calimaborges/how-to-npm/issues"
+  },
+  "homepage": "https://github.com/calimaborges/how-to-npm#readme"
+}

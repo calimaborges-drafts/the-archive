@@ -1,0 +1,33 @@
+{
+  "name": "slack-no-ws",
+  "version": "1.0.0",
+  "description": "Slack CLI withou WebSockets. HTTP Only.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calimaborges/slack-no-ws.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calimaborges/slack-no-ws/issues"
+  },
+  "homepage": "https://github.com/calimaborges/slack-no-ws#readme",
+  "devDependencies": {
+    "codeclimate-test-reporter": "^0.3.1",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "lodash": "^4.6.1",
+    "prompt": "^1.0.0",
+    "superagent": "^1.7.2",
+    "superagent-proxy": "^1.0.0"
+  }
+}

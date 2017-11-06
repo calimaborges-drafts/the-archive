@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "parent": null,
+    "children": [
+      {
+        "id": 3,
+        "parent": 1,
+        "children": [
+          {
+            "id": 6,
+            "parent": 3,
+            "children": [
+              {
+                "id": 8,
+                "parent": 6,
+                "children": [
+                  {
+                    "id": 9,
+                    "parent": 8,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 7,
+            "parent": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "parent": 1,
+        "children": []
+      },
+      {
+        "id": 5,
+        "parent": 1,
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "parent": null,
+    "children": []
+  }
+]

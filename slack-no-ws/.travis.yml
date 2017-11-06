@@ -1,0 +1,6 @@
+language: node_js
+node_js:
+        - "4.1"
+addons:
+    code_climate:
+        repo_token: 4acdb77ac431cbbdb2a3cc7f9b2a2b82d1560fff6727721dfe9934ab645e1aa3

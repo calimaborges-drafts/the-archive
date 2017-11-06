@@ -1,0 +1,4 @@
+.idea
+self-contained-tomcat.iml
+target
+tomcat.*

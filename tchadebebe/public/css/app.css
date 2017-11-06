@@ -1,0 +1,38 @@
+body {
+    font-size: 150%;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    /*font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;*/
+    color: #262626;
+}
+
+.imagem-presente {
+    width: 200px;
+}
+
+.categoria-container {
+    display:table-cell;
+}
+
+.meus-presentes-container .categoria {
+    background-color: #D2FFA0;
+}
+
+.categoria {
+    border: 1px solid #888888;
+    margin-bottom: 30px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.endereco {
+    padding: 5px 0px 5px 0px;
+    background-color: #eeeeee;
+    width: 300px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
