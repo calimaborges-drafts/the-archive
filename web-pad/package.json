@@ -1,0 +1,11 @@
+{
+  "name": "quiborgue-pad",
+  "description": "A very simple text pad.",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "underscore": "^1.6.0",
+    "uuid": "^1.4.1"
+  }
+}
