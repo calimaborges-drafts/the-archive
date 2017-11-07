@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dolly Wars - Terceira Edição</title>
+        <style media="screen">
+        html {
+            margin: 0;
+            background: url(darth-vader.png) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        #container {
+            position: absolute;
+            bottom: 20px;
+            left: 0; right: 0;
+        }
+
+        #subcontainer {
+            margin: 0 auto;
+            width: 350px;
+        }
+
+        #logo {
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        #logo img {
+            width: 100%;
+        }
+
+        #login {
+            text-align: center;
+            background-color: rgba(0,0,0,0.5);
+            padding: 30px;
+        }
+
+        input, button {
+            display: block;
+            border: 0px;
+            font-size: 1.0em;
+            margin: 0.2em auto;
+            padding: 10px;
+            width: 100%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        input {
+            border: 1px solid yellow;
+            color: white;
+            outline-color: none;
+            outline-color: yellow;
+        }
+
+        button {
+            border: 1px solid white;
+            color: white;
+            outline: none;
+        }
+
+        button:hover, button:focus {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000000;
+        }
+
+        button:active {
+            background-color: rgba(255, 255, 255, 1);
+            color: #000000;
+        }
+
+        button.confirm {
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            outline-color: #00ff00;
+        }
+
+        button.confirm:hover, button.confirm:focus {
+            background-color: rgba(0, 255, 0, 0.8);
+            color: #000000;
+        }
+
+        button.confirm:active {
+            background-color: rgba(0, 255, 0, 1);
+            color: #000000;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="subcontainer">
+                <div id="login">
+                    <form>
+                        <input type="text" placeholder="Login" />
+                        <input type="password" placeholder="Senha" />
+                        <br />
+                        <br />
+                        <button type="submit" class="confirm">Acessar</button>
+                        <button>Cadastrar</button>
+                    </form>
+                </div>
+                <div id="logo">
+                    <img src="dolly-wars-logo.png" />
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+</html>
