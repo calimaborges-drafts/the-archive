@@ -1,9 +1,29 @@
 body {
   font-family: "Crimson Text", serif;
   background-color: #f2fffc;
+  color: #851944;
 }
 
-h1 {
+blockquote {
+  background-color: #d9e5e3;
+}
+
+aside {
+  font-family: "Open Sans Condensed", sans-serif;
+  background-color: #3c1d3d;
+  color: #f2fffc;
+}
+
+aside a {
+  color: inherit;
+}
+
+footer {
+  background-color: #000;
+  color: #f2fffc;
+}
+
+main > h1 {
   font-size: 60px;
   background-color: #851944;
   color: #ffffff;
