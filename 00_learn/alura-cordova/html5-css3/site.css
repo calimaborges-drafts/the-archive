@@ -1,33 +1,125 @@
+#borboleta #right {
+  border-left: 30px solid red;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  width: 0;
+}
+#borboleta #left {
+  border-right: 30px solid red;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  width: 0;
+}
+
+#triangulo-reto {
+  border-top: 30px solid red;
+  border-right: 30px solid transparent;
+  border-top: 30px solid red;
+  border-bottom: 30px solid red;
+  width: 0;
+}
+
+#teste-borda {
+  border: 10px solid #c2ccca;
+  border-bottom-color: #333;
+  border-right-color: transparent;
+  width: 100px;
+  height: 100px;
+}
+
 body {
   font-family: "Crimson Text", serif;
   background-color: #f2fffc;
+  line-height: 1.5;
   color: #851944;
 }
 
 blockquote {
   background-color: #d9e5e3;
+  padding: 20px;
+  border: 10px solid #c2ccca;
+  box-sizing: border-box;
+  width: 250px;
+  margin: 20px 40px;
 }
 
 aside {
   font-family: "Open Sans Condensed", sans-serif;
   background-color: #3c1d3d;
   color: #f2fffc;
+  text-align: center;
+}
+
+aside h1 {
+  font-size: 30px;
+  margin-bottom: 25px;
 }
 
 aside a {
   color: inherit;
+  text-transform: lowercase;
 }
 
-footer {
+.icones-sociais li {
+  display: inline-block;
+}
+
+.icones-sociais li a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-indent: -9999px;
+}
+
+.twitter {
+  background-image: url(twitter.png);
+}
+
+.github {
+  background-image: url(github.png);
+}
+
+.linkedin {
+  background-image: url(linkedin.png);
+}
+
+#whole-footer {
   background-color: #000;
   color: #f2fffc;
 }
 
+.leia-mais {
+  font-size: 1.1em;
+  padding: 10px;
+  margin: 10px;
+  background-color: #ddd;
+}
+
+main footer {
+  border-bottom: 1px solid #ccc;
+}
+
+main div {
+  width: 720px;
+  margin: 30px auto;
+}
+
 main > h1 {
-  font-size: 60px;
   background-color: #851944;
   color: #ffffff;
   text-align: center;
+  font-family: "Open Sans Condensed", sans-serif;
+  padding: 25px;
+  border-bottom: 10px solid black;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+article > h1 {
+  font-size: 40px;
   font-family: "Open Sans Condensed", sans-serif;
 }
 
@@ -38,4 +130,13 @@ h2 {
 
 p {
   text-align: justify;
+  margin: 25px 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
 }
