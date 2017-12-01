@@ -68,7 +68,7 @@ aside a {
   display: inline-block;
   width: 40px;
   height: 40px;
-  text-indent: -9999px;
+  font-size: 0;
 }
 
 .twitter {
