@@ -11,17 +11,6 @@ const fetch_content = async () => {
 };
 
 const check_for_news = async body => {
-  const set_quantidade_linhas_tabela = quantidade => {
-    fs.writeFileSync(DB_FILE, quantidade);
-  };
-
-  const get_quantidade_linhas_tabela = () => {
-    if (!fs.existsSync(DB_FILE)) {
-      set_quantidade_linhas_tabela(0);
-    }
-    return parseInt(fs.readFileSync(DB_FILE).toString(), 10);
-  };
-
   const $ = cheerio.load(body);
   const quantidade_linhas_tabela = $("#parent-fieldname-text table.plain tr")
     .length;
