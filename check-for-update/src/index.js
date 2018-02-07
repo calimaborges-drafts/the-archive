@@ -10,7 +10,7 @@ const check_for_update = ({ fetch_content, check_for_news }) => async () => {
   notify(data);
 };
 
-const VERIFY_INTERVAL = 5 * 1000;
+const VERIFY_INTERVAL = 10 * 1000;
 const interval = check_for_update(dodf);
 
 interval();
