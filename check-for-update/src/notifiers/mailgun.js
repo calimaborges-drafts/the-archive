@@ -1,15 +1,16 @@
-require("dotenv").config();
+const env = require("../../../secrets/mailgun");
+
 const mailgun = require("mailgun-js")({
-  apiKey: process.env.MAILGUN_API_KEY,
-  domain: process.env.MAILGUN_DOMAIN
+  apiKey: env.MAILGUN_API_KEY,
+  domain: env.MAILGUN_DOMAIN
 });
 
 const notify = data => {
   mailgun.messages().send(
     {
       ...data,
-      from: process.env.MAILGUN_FROM,
-      to: process.env.MAILGUN_TO
+      from: env.MAILGUN_FROM,
+      to: env.MAILGUN_TO_NOTIFY
     },
     function(error, body) {
       if (error) console.error(error);
