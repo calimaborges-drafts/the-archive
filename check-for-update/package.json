@@ -4,7 +4,7 @@
   "description": "Verifica se houve atualização em uma determinada página.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,6 @@
     "cheerio": "^0.22.0",
     "dotenv": "^2.0.0",
     "mailgun-js": "^0.7.12",
-    "superagent": "^2.2.0",
-    "superagent-proxy": "^1.0.1"
+    "node-fetch": "^2.0.0"
   }
 }
