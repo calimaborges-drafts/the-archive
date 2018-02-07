@@ -2,9 +2,9 @@
   "name": "check-for-update",
   "version": "1.0.0",
   "description": "Verifica se houve atualização em uma determinada página.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
