@@ -2,11 +2,11 @@
   "name": "50centify",
   "version": "0.1.0",
   "author": "Carlos Augusto Borges",
-  "description": "Converts multiple exchanges to 50 Cents meme",
+  "description": "Converts multiple currencies to 50cent meme",
   "dependencies": {
     "connect": "^3.4.0",
     "fabric-browserify": "^1.4.13",
-    "jquery": "^2.1.4",
+    "jquery": "^3.3.1",
     "money": "^0.2.0",
     "qs": "^5.1.0",
     "react": "^0.13.3",
@@ -15,8 +15,8 @@
   },
   "devDependencies": {
     "browserify": "latest",
-    "watchify": "latest",
-    "uglifyjs": "latest"
+    "uglifyjs": "latest",
+    "watchify": "latest"
   },
   "browserify": {
     "transform": [
