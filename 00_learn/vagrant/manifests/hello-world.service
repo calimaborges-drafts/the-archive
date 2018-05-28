@@ -1,0 +1,13 @@
+[Unit]
+Description=Hello World
+Documentation=http://www.google.com/
+After=network.target
+
+[Service]
+Type=simple
+User=vagrant
+ExecStart=/usr/bin/node /vagrant/src/index.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
