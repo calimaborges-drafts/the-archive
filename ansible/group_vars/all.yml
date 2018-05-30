@@ -1,0 +1,7 @@
+---
+wordpress_db: wordpress_db
+wordpress_user: wordpress_user
+wordpress_password: wordpress_password
+wordpress_install_dir: "/var/www/wordpress"
+wordpress_host_ip: "172.17.177.40"
+wordpress_database_ip: "172.17.177.42"

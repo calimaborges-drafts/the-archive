@@ -1,0 +1,36 @@
+---
+- name: install dependencies
+  apt:
+    name: "{{ item }}"
+    state: latest
+  become: yes
+  with_items:
+    - mysql-server-5.6
+    - python-mysqldb 
+
+- name: create database
+  mysql_db:
+    name: "{{ wordpress_db }}"
+    login_user: root
+    state: present
+
+- name: create database user
+  mysql_user:
+    login_user: root
+    name: "{{ wordpress_user }}"
+    password: "{{ wordpress_password }}"
+    priv: "{{ wordpress_db }}.*:ALL,GRANT"
+    state: present
+    host: "{{ item }}"
+  with_items:
+    - "localhost"
+    - "127.0.0.1"
+    - "{{ wordpress_host_ip }}"
+
+- name: set mysql configuration file
+  copy:
+    src: "files/my.cnf"
+    dest: "/etc/mysql/my.cnf"
+  become: yes
+  notify:
+    - restart mysql
